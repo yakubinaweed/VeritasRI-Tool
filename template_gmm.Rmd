@@ -1,0 +1,62 @@
+---
+title: "**GMM Subpopulation Detection Analysis Report**"
+output: html_document
+params:
+  bic_plot_path: NULL
+  scatter_plot_path: NULL
+  summary_text: NULL
+---
+
+<style>
+body {
+  font-family: Helvetica;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  color: #333;
+}
+pre {
+  font-size: 9px !important;
+  font-family: Helvetica, sans-serif !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  background-color: #f5f5f5 !important;
+  border: 1px solid #ddd !important;
+  padding: 15px !important;
+  border-radius: 5px !important;
+}
+@page {
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 10px;
+  }
+}
+</style>
+
+##### *Analysis saved on `r format(Sys.time(), '%Y-%m-%d %H:%M:%S')`*
+
+```{r, echo=FALSE, fig.cap=paste0("<span style='font-size: 0.7em;'>Figure 1: Model Selection using the Bayesian Information Criterion (BIC). This plot shows the BIC scores for different Gaussian Mixture Model (GMM) parameterizations (represented by colored lines) across a range of component numbers. The optimal model, which provides the best balance of fit and complexity, is identified by the combination of components and model type that achieves the highest BIC value."), out.width="70%"}
+if (!is.null(params$bic_plot_path) && file.exists(params$bic_plot_path)) {
+  knitr::include_graphics(params$bic_plot_path)
+} else {
+  "BIC plot not available."
+}
+
+```{r, echo=FALSE}
+htmltools::HTML("<br>")
+```
+
+```{r, echo=FALSE, fig.cap=paste0("<span style='font-size: 0.7em;'>Figure 2: A scatter plot visualizing the relationship between a measured value (y-axis) and age (x-axis), segmented by automatically detected subpopulations. The chart is divided into panels to compare different demographic groups. Each data point represents an individual and is color-coded according to its assigned subpopulation cluster. The semi-transparent ellipses represent the 95% confidence interval for each cluster, while the red 'x' marks the cluster's center (mean)."), out.width="70%"}
+if (!is.null(params$scatter_plot_path) && file.exists(params$scatter_plot_path)) {
+  knitr::include_graphics(params$scatter_plot_path)
+} else {
+  "Scatter plot not available."
+}
+
+#### **GMM Summary**
+if (!is.null(params$summary_text) && nzchar(params$summary_text)) {
+  cleaned_text <- gsub("## ?", "", params$summary_text)
+  cat(paste0(cleaned_text))
+} else {
+  cat('<p>Summary not available.</p>')
+}

@@ -1,0 +1,56 @@
+---
+title: "**Main RefineR Analysis Report**"
+output: html_document
+params:
+  plot_path: NULL
+  text_result: NULL
+  hemoglobin_value: "Hemoglobin (HB)"
+  gender: "Both"
+  age_min: 0
+  age_max: 100
+  lower_limit: 7.1
+  upper_limit: 10.1
+  unit: "mmol/L"
+  model_name: "BoxCox"
+---
+
+<style>
+body {
+  font-family: Helvetica;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  color: #333;
+}
+.summary {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-wrap; /* Ensures line breaks are respected */
+}
+@page {
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 10px;
+  }
+}
+</style>
+
+
+##### *Analysis saved on `r format(Sys.time(), '%Y-%m-%d %H:%M:%S')`*
+
+#### **Result Plot & Summary**
+
+```{r, echo=FALSE, fig.cap=paste0("<span style='font-size: 0.7em;'>Figure 1: A histogram of ", params$hemoglobin_value, " values", if (!is.na(params$unit) && params$unit != "") paste0(" (in ", params$unit, ")") else "", " from a sample of individuals (Gender: ", params$gender, ", Age: ", params$age_min, "-", params$age_max, "). The solid curve represents the fitted data distribution after a ", params$model_name, " transformation. The vertical dashed lines mark the estimated 95% reference interval, with a lower limit at the 2.5th percentile (", params$lower_limit, if (!is.na(params$unit) && params$unit != "") paste0(" ", params$unit) else "", ") and an upper limit at the 97.5th percentile (", params$upper_limit, if (!is.na(params$unit) && params$unit != "") paste0(" ", params$unit) else "", ").</span>"), out.width="60%"}
+if (!is.null(params$plot_path) && file.exists(params$plot_path)) {
+  knitr::include_graphics(params$plot_path)
+} else {
+  "Plot not available."
+}
+
+if (!is.null(params$text_result)) {
+  cat(params$text_result, sep = "\n")
+} else {
+  "Summary not available."
+}
