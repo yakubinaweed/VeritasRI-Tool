@@ -97,11 +97,11 @@ ui <- navbarPage(
           label = tags$span(
             tooltip(
               trigger = list(tags$span(bs_icon("info-circle"))),
-              "This slider controls the number of bootstrap iterations, a statistical method used to verify the stability and accuracy of the calculated reference interval. Higher values lead to more precise confidence intervals at the cost of longer computation time. For final results, a higher value (e.g., 200) is recommended."
+              "This slider controls the number of bootstrap iterations, a statistical method used to verify the stability and accuracy of the calculated reference interval. Higher values lead to more precise confidence intervals at the cost of longer computation time. For final results, a higher value (e.g., 1000) is recommended."
             ),
             "Select Computation Speed:"
           ),
-          min = 1, max = 200, value = 50, step = 1
+          min = 1, max = 1000, value = 50, step = 1
         ),
         radioButtons(inputId = "model_choice",
                      label = tags$span(
@@ -242,8 +242,8 @@ ui <- navbarPage(
         hr(),
         sliderInput(
           inputId = "parallel_nbootstrap_speed",
-          label = tags$span(tooltip(trigger = list(tags$span(bs_icon("info-circle"))), "This slider controls the number of bootstrap iterations, a statistical method used to verify the stability and accuracy of the calculated reference interval. Higher values lead to more precise confidence intervals at the cost of longer computation time. For final results, a higher value (e.g., 200) is recommended."), "Select Computation Speed:"),
-          min = 1, max = 200, value = 50, step = 1
+          label = tags$span(tooltip(trigger = list(tags$span(bs_icon("info-circle"))), "This slider controls the number of bootstrap iterations, a statistical method used to verify the stability and accuracy of the calculated reference interval. Higher values lead to more precise confidence intervals at the cost of longer computation time. For final results, a higher value (e.g., 1000) is recommended."), "Select Computation Speed:"),
+          min = 1, max = 1000, value = 50, step = 1
         ),
         radioButtons(inputId = "parallel_model_choice",
                      label = tags$span(tooltip(trigger = list(tags$span(bs_icon("info-circle"))), "BoxCox: For positive-valued data with light to moderate skewness. modBoxCox: For data with high skewness or values close to zero. Auto-select: Automatically chooses the optimal transformation based on data skewness."), "Select Transformation Model:"),
@@ -309,11 +309,12 @@ ui <- navbarPage(
         class = "about-container",
         div(
           class = "about-header",
-          h2("About VeritasRI: Methodology Overview")
+          h2(strong("About VeritasRI: Methodology Overview"))
         ),
         div(
           class = "about-content",
-          p("VeritasRI is a specialized tool designed to streamline the process of estimating clinical reference intervals. This section provides a transparent overview of the statistical methods and R packages that power the application's core features, ensuring a clear understanding of how results are generated.")
+          p("VeritasRI is a specialized tool designed to streamline and accelerate the process of estimating clinical reference intervals from complex datasets. It automates advanced statistical methods to provide robust, reproducible results, transforming a tedious manual task into an efficient, interactive workflow."),
+          p("This application is built for clinicians, lab professionals, and researchers who need to derive accurate reference ranges from real-world data, which may include mixed healthy and pathological populations.")
         ),
         
         accordion(
@@ -352,7 +353,13 @@ ui <- navbarPage(
     ) # End fluidPage
   ),
   footer = tags$footer(
-    HTML('© 2025 <a href="https://github.com/yakubinaweed/refineR-reference-interval" target="_blank">Naweed Yakubi</a> • All rights reserved.'),
+    "© 2025 ",
+    tags$a(href = "https://github.com/yakubinaweed/", target = "_blank", "Naweed Yakubi"),
+    " • ",
+    tags$a(href = "https://github.com/yakubinaweed/VeritasRI-Tool/", target = "_blank", bs_icon("github")),
+    " • ",
+    tags$a(href = "https://www.linkedin.com/in/naweed-yakubi/", target = "_blank", bs_icon("linkedin")),
+    " • All rights reserved.",
     style = "
       position: bottom;
       bottom: 0;

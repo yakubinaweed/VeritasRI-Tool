@@ -196,9 +196,9 @@
 
 .about-header {
   text-align: center;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 15px;
-  margin-bottom: 30px;
+  border-bottom: 0px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .about-header h2 {
