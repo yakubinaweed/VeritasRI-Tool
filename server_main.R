@@ -1,5 +1,4 @@
 # server_main.R
-# This module contains the logic for the "Main Analysis" tab.
 
 # =========================================================================
 # UTILITY FUNCTIONS FOR MAIN ANALYSIS
@@ -297,13 +296,13 @@ mainServer <- function(input, output, session, data_reactive, selected_dir_react
       )
       dev.off()
 
-      # NEW: Extract the reference interval limits from the model
+      # Extract the reference interval limits from the model
       refiner_model <- refiner_model_rv()
       ri_data <- refineR::getRI(refiner_model)
       lower_limit <- round(ri_data$PointEst[1], 1)
       upper_limit <- round(ri_data$PointEst[2], 1)
 
-      # NEW: Determine the model choice that was used in the analysis
+      # Determine the model choice that was used in the analysis
       final_model_choice <- isolate({
         if (input$model_choice == "AutoSelect") {
           data_to_analyze <- filtered_data_reactive()$data[[input$col_value]]
@@ -327,7 +326,6 @@ mainServer <- function(input, output, session, data_reactive, selected_dir_react
       rmarkdown::render(
         input = temp_report,
         output_file = temp_html,
-        # UPDATED: Add the new parameters to this list
         params = list(
           plot_path = temp_plot_path,
           text_result = text_output,

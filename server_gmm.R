@@ -1,5 +1,4 @@
 # server_gmm.R
-# This module contains the logic for the "Subpopulation Detection (GMM)" tab.
 
 # =========================================================================
 # UTILITY FUNCTIONS FOR GMM ANALYSIS
@@ -247,7 +246,6 @@ gmmServer <- function(input, output, session, gmm_uploaded_data_rv, gmm_processe
         return(NULL)
       }
     }
-
 
     if (analysis_running_rv()) {
       message_rv(list(text = "An analysis is already running. Please wait.", type = "warning"))
@@ -734,7 +732,6 @@ gmmServer <- function(input, output, session, gmm_uploaded_data_rv, gmm_processe
           bic_plot_path = temp_bic_plot_path,
           scatter_plot_path = temp_scatter_plot_path,
           summary_text = final_summary_text
-          # The font_size parameter has been removed
         ),
         envir = new.env(parent = globalenv())
       )

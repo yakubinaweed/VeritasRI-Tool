@@ -1,6 +1,9 @@
 /* styles.css */
 
-/* Navbar styling */
+/* ==========================================================================
+   Navbar Styling
+   ========================================================================== */
+
 .navbar {
     background-color: #f8f9fa !important;
     border-bottom: 1px solid #ddd !important;
@@ -16,14 +19,12 @@
     font-weight: 700 !important;
     color: #222 !important;
     margin-right: 2rem !important;
-    padding: 0rem 2rem 0rem 0 !important; /* Symmetrical padding */
+    padding: 0rem 2rem 0rem 0 !important;
     border-right: 1px solid #ddd;
     cursor: default;
     user-select: none;
-
-    /* --- Layout Fix --- */
-    display: inline-block !important; /* Treat the container as a block */
-    height: auto !important;         /* Allow height to be determined by content */
+    display: inline-block !important;
+    height: auto !important;
     vertical-align: middle;
 }
 
@@ -35,7 +36,10 @@
     outline: none;
 }
 
-/* Nav links with full rounded corners */
+/* ==========================================================================
+   Nav Links
+   ========================================================================== */
+
 .navbar-nav {
     display: flex;
     gap: 1.5rem;
@@ -87,7 +91,10 @@
     margin-bottom: 0 !important;
 }
 
-/* Custom styles for the Main Analysis tab content */
+/* ==========================================================================
+   Tab Content Styling
+   ========================================================================== */
+
 #Main\\ Analysis .tab-content {
     background-color: #f9fbff;
     border: 1px solid #ddd;
@@ -103,7 +110,10 @@
     padding-bottom: 0.5rem !important;
 }
 
-/* Custom styling for GMM results title */
+/* ==========================================================================
+   GMM Results
+   ========================================================================== */
+
 .output-box h4.gmm-title {
     font-size: 20px !important;
     font-weight: bold !important;
@@ -114,12 +124,14 @@
     color: #000000;
 }
 
-/* Adds custom spacing between UI elements */
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
 .spacing-div {
   margin-top: 3rem;
 }
 
-/* Disables tab links during analysis */
 .disabled-tab-link {
   pointer-events: none;
   color: #ccc !important;
@@ -127,7 +139,31 @@
   cursor: not-allowed !important;
 }
 
-/* Styles for the gender filter container */
+.disabled-download {
+  pointer-events: none;
+  background-color: #ccc !important;
+  border-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* ==========================================================================
+   Button Groups
+   ========================================================================== */
+
+.parallel-buttons,
+.main-buttons,
+.gmm-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Filter and Summary Styling
+   ========================================================================== */
+
 .gender-filter-container {
   display: flex;
   justify-content: center;
@@ -165,25 +201,10 @@
   font-weight: bold;
 }
 
-.parallel-buttons,
-.main-buttons,
-.gmm-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
-}
+/* ==========================================================================
+   About Page Styling
+   ========================================================================== */
 
-/* Styles for disabled download button */
-.disabled-download {
-  pointer-events: none;
-  background-color: #ccc !important;
-  border-color: #ccc !important;
-  cursor: not-allowed !important;
-}
-
-/* --- About Page General Styling --- */
 .about-container {
   max-width: 850px;
   margin: 20px auto 40px auto;
@@ -239,7 +260,10 @@
   border: 1px solid #dee2e6;
 }
 
-/* --- Accordion Styling for About Page --- */
+/* ==========================================================================
+   Accordion Styling
+   ========================================================================== */
+
 .accordion {
     --bs-accordion-border-color: #dee2e6;
     --bs-accordion-border-radius: 0.5rem;
@@ -251,7 +275,7 @@
 .accordion-item {
     background-color: #fff;
     border: 1px solid var(--bs-accordion-border-color);
-    margin-bottom: 0.5rem; /* Space between items */
+    margin-bottom: 0.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     transition: box-shadow 0.2s ease-in-out;
 }
@@ -290,14 +314,17 @@
     background-color: #fff;
 }
 
-/* General card styling (if not already defined by bslib/bootstrap) */
+/* ==========================================================================
+   Card Styling
+   ========================================================================== */
+
 .card {
     border: 1px solid #dee2e6;
     border-radius: 0.375rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    overflow: hidden; /* Ensures borders/shadows are contained */
+    overflow: hidden;
 }
 
 .card-body {
-    padding: 1.25rem; /* Standard Bootstrap card-body padding */
+    padding: 1.25rem;
 }

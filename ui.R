@@ -349,8 +349,8 @@ ui <- navbarPage(
             p(strong("How it Works:"), " When an analysis is initiated, the application distributes the jobs across multiple CPU cores. This means that calculations for several age-gender groups can happen at the same time, significantly reducing the total computation time compared to running them sequentially. The number of cores used can be configured in the Advanced Settings.")
           )
         )
-      ) # End about-container
-    ) # End fluidPage
+      ) 
+    ) 
   ),
   footer = tags$footer(
     "© 2025 ",
