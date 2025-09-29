@@ -5,7 +5,7 @@ Have you ever spent hours manually sifting through clinical data, running the sa
 
 VeritasRI takes the pain out of estimating clinical **reference intervals (RIs)**. By leveraging advanced statistical methods like **refineR** and **Gaussian Mixture Models (GMM)**, it helps you accurately determine reference ranges even when your data is messy, mixed, or contains hidden subpopulations.
 
-<img width="1920" height="887" alt="1" src="https://github.com/user-attachments/assets/5c87bab8-2d16-426b-ba51-47e99faa6969" />
+<img width="1920" height="887" alt="1" src="https://github.com/user-attachments/assets/3a93f442-b361-4f52-a346-899a2e6300b0" />
 
 > "Veritas filia temporis." (Truth is the daughter of time.) — Latin Proverb
 
@@ -24,7 +24,10 @@ Your data often holds secrets. Our **GMM Clustering** feature helps you find the
 ### 3. Get Results Faster with Parallel Analysis 🚀
 Need to run multiple analyses for different age groups or genders? No problem. The **Parallel Analysis** tab uses the **future** package to run multiple **refineR** analyses at the same time, leveraging all your CPU cores to give you results in a fraction of the time. You can view all your results together in a combined summary or explore each group individually.
 
-<img width="1091" height="1101" alt="Scherm_afbeelding 2025-08-26 om 16 02 16" src="https://github.com/user-attachments/assets/7664dae8-d948-452d-ac71-337a0b1fbeb5" />
+### 4. Download Professional Reports Instantly 📄
+Don't waste time manually creating reports. With a single click, you can download all of your results—including plots and statistical summaries—into a clean, professional PDF document, ready for presentation or publication in seconds.
+
+<img width="2164" height="2360" alt="image" src="https://github.com/user-attachments/assets/77b227af-7113-46d0-9f2f-21b19cddf22a" />
 
 ---
 
@@ -54,7 +57,7 @@ We've integrated cutting-edge methods to ensure you get the most reliable result
 
 3.  **Clone & Run:** Clone the repository and run the app from RStudio.
     ```bash
-    git clone [https://github.com/yakubinaweed/VeritasRI.git](https://github.com/yakubinaweed/VeritasRI.git)
+    git clone [https://github.com/yakubinaweed/VeritasRI.git](https://github.com/yakubinaweed/VeritasRI-Tool.git)
     ```
     Open the project folder in RStudio, then open the `app.R` file and click the **'Run App'** button in the top-right corner.
 
@@ -74,7 +77,7 @@ We've integrated cutting-edge methods to ensure you get the most reliable result
 
 VeritasRI is an open-source project. If you have ideas, suggestions, or bug reports, please feel free to open an issue or submit a pull request.
 
-[**View the VeritasRI GitHub Repository**](https://github.com/yakubinaweed/VeritasRI)
+[**View the VeritasRI GitHub Repository**](https://github.com/yakubinaweed/VeritasRI-Tool)
 
 ---
 
